@@ -174,11 +174,6 @@ const Gotp = asyncHandler(async (req, res) => {
         Follow these steps to complete the verification process:
         <br/><br/>
          
-     
-        
-        Please use following verification code to confirm your account.<br/>
-        This code will be valid only for 15 minutes.
-        <br/>
         <center><h2 style="color : blue;">${OTP}</h2></center>
      
         If you have any questions, simply reply to this email.
