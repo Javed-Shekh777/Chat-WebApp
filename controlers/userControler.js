@@ -24,7 +24,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password } = req.body;
     const { image } = req.files;
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password !image) {
         res.status(400);
         throw new Error('Please Enter all the Fields');
     }
@@ -139,12 +139,18 @@ const allUsers = asyncHandler(async (req, res, next) => {
 
 const Gotp = asyncHandler(async (req, res) => {
     const { name, email } = req.body;
+    
 
     if (!name || !email) {
         res.status(400);
         res.send({
             Message: "Please fill the fileds!",
         });
+         if (!validator.isEmail(email)) {
+        return res.status(400).json({
+            Message: 'Email must be a valid email',
+        });
+    }
     }
 
     try {
