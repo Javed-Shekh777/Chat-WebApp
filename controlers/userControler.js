@@ -24,7 +24,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password } = req.body;
     const { image } = req.files;
 
-    if (!name || !email || !password !image) {
+    if (!name || !email || !password || !image) {
         res.status(400);
         throw new Error('Please Enter all the Fields');
     }
