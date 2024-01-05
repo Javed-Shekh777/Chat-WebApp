@@ -91,6 +91,7 @@ const authUser = asyncHandler(async (req, res) => {
 
     // res.send("Welcome to login Page")
     const { email, password } = req.body;
+    console.log("Name is : ",email);
 
 
     const user = await User.findOne({ email });
